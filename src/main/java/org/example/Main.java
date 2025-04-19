@@ -236,6 +236,10 @@ public class Main {
         c = new Comprador(new Moneda100(), Expendedor.COCA, exp);
         System.out.println("Bebida: " + c.queBebiste() + "; Vuelto: " + c.cuantoVuelto());
 
+        // Codigo de usuario 2
+        c = new Comprador(new Moneda1500(), Expendedor.COCA, exp);
+        System.out.println("Bebida: " + c.queBebiste() + "; Vuelto: " + c.cuantoVuelto());
+
         // Comprar sin bebidas
         c = new Comprador(new Moneda1000(), Expendedor.COCA, exp);
         System.out.println("Bebida: " + c.queBebiste() + "; Vuelto: " + c.cuantoVuelto());
