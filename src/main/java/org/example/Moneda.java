@@ -1,4 +1,12 @@
 package org.example;
 
-public class Moenda {
+abstract class Moneda {
+    public Moneda() {}
+
+    public Moneda getSerie() {
+        return this;
+    }
+
+    public abstract int getValor();
 }
+
