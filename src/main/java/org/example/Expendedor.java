@@ -1,8 +1,11 @@
 package org.example;
 
 class Expendedor {
-    private Deposito coca;
-    private Deposito sprite;
+    private Deposito<Bebida> coca;
+    private Deposito<Bebida> sprite;
+    private Deposito<Bebida> fanta;
+    private Deposito<Dulce> snickers;
+    private Deposito<Dulce> super8;
     private DepositoM monVu;
     private int precio;
 
@@ -10,14 +13,22 @@ class Expendedor {
     public static final int SPRITE=2;
 
     public Expendedor(int numBebidas, int precioBebidas) {
-        coca = new Deposito();
-        sprite = new Deposito();
+        coca = new Deposito<Bebida>();
+        sprite = new Deposito<Bebida>();
+        fanta = new Deposito<Bebida>();
+
+        snickers = new Deposito<Dulce>();
+        super8 = new Deposito<Dulce>();
+
         monVu = new DepositoM();
         precio = precioBebidas;
 
         for (int i = 0; i < numBebidas; i++) {
-            coca.add(new CocaCola(100+i));
-            sprite.add(new Sprite(200+i));
+            coca.add(     new CocaCola( (i*5)+0 ));
+            sprite.add(   new Sprite( (i*5)+1   ));
+            fanta.add(    new Fanta( (i*5)+2    ));
+            snickers.add( new Snickers( (i*5)+3 ));
+            super8.add(   new Super8( (i*5)+4   ));
         }
     }
 
@@ -32,7 +43,7 @@ class Expendedor {
             throw new PagoInsuficienteException("Pago insuficiente");
         }
 
-        Bebida temp = null;
+        Producto temp = null;
 
         switch (cual) {
             case COCA:
