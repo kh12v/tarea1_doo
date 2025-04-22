@@ -5,7 +5,7 @@ class CocaCola extends Bebida {
         super(numSerie);
     }
 
-    public String beber() {
+    public String consumir() {
         return "cocacola";
     }
 }

@@ -1,8 +1,8 @@
 package org.example;
 
 class Comprador {
-    private String sonido;
-    private int vuelto;
+    private String sonido = "";
+    private int vuelto = 0;
 
     public Comprador(Moneda m, int cualBebida, Expendedor exp) {
         Bebida b = null;
@@ -17,13 +17,17 @@ class Comprador {
         } catch (PagoIncorrectoException e) {
             // TODO: Remove log
             System.out.println("Error: " + e.getMessage());
+            return;
         }
 
         if (b == null) {
-            vuelto = exp.getVuelto().getValor();
+            Moneda monedaTemporal = exp.getVuelto();
+            if (monedaTemporal != null) {
+                vuelto = monedaTemporal.getValor();
+            }
             return;
         }
-        sonido = b.beber();
+        sonido = b.consumir();
 
         Moneda mVuelto = exp.getVuelto();
 
