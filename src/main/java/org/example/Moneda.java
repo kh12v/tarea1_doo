@@ -8,5 +8,10 @@ abstract class Moneda {
     }
 
     public abstract int getValor();
+
+    @Override
+    public String toString() {
+        return "Moneda:\n-Serie: " + getSerie() + "\n-Valor: " + getValor();
+    }
 }
 

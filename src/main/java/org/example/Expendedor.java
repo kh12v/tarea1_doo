@@ -21,14 +21,15 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int cual) {
+    public Bebida comprarBebida(Moneda m, int cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (m == null) {
-            return null;
+            throw new PagoIncorrectoException("Debe ingresar una moneda");
         }
 
-        if (m.getValor() < precio || (cual != COCA && cual != SPRITE)) {
+        // No alcanza saldo
+        if (m.getValor() < precio) {
             monVu.add(m);
-            return null;
+            throw new PagoInsuficienteException("Pago insuficiente");
         }
 
         Bebida temp = null;
@@ -40,11 +41,14 @@ class Expendedor {
             case SPRITE:
                 temp = sprite.get();
                 break;
+            default:
+                throw new NoHayProductoException("No existe producto solicitado");
         }
 
+        // No hay producto solicitado
         if (temp == null) {
             monVu.add(m);
-            return null;
+            throw new NoHayProductoException("No hay producto solicitado");
         }
 
         int howManyCoins = (m.getValor() - precio) / 100;
