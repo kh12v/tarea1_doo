@@ -9,7 +9,14 @@ class Comprador {
             return;
         }
 
-        Bebida b = exp.comprarBebida(m, cualBebida);
+        Bebida b = null;
+        try {
+            b = exp.comprarBebida(m, cualBebida);
+        } catch(NoHayProductoException e) {
+            // TODO: Remove log
+            System.out.println("Error: " + e.getMessage());
+        }
+
         if (b == null) {
             vuelto = exp.getVuelto().getValor();
             return;

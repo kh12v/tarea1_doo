@@ -21,7 +21,7 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int cual) {
+    public Bebida comprarBebida(Moneda m, int cual) throws NoHayProductoException {
         if (m == null) {
             return null;
         }
@@ -42,9 +42,10 @@ class Expendedor {
                 break;
         }
 
+        // No hay producto solicitado
         if (temp == null) {
             monVu.add(m);
-            return null;
+            throw new NoHayProductoException("No hay producto solicitado");
         }
 
         int howManyCoins = (m.getValor() - precio) / 100;
