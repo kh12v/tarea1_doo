@@ -32,12 +32,6 @@ class Expendedor {
             throw new PagoInsuficienteException("Pago insuficiente");
         }
 
-        // Opción de producto no válido
-        if ((cual != COCA && cual != SPRITE)) {
-            monVu.add(m);
-            return null;
-        }
-
         Bebida temp = null;
 
         switch (cual) {
@@ -47,6 +41,8 @@ class Expendedor {
             case SPRITE:
                 temp = sprite.get();
                 break;
+            default:
+                throw new NoHayProductoException("No existe producto solicitado");
         }
 
         // No hay producto solicitado
