@@ -20,6 +20,8 @@ class Deposito<T> {
     }
 
     public void add(T producto) {
+        if (producto == null) return;
+
         arrayList.add(producto);
     }
 }

@@ -23,25 +23,5 @@ public class Main {
         System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
 
         ArrayList<Moneda> monedas = new ArrayList<Moneda>();
-
-        monedas.add(new Moneda100());
-        monedas.add(new Moneda500());
-        monedas.add(new Moneda100());
-        monedas.add(new Moneda1000());
-        monedas.add(new Moneda100());
-        monedas.add(new Moneda500());
-        monedas.add(new Moneda1000());
-        monedas.add(new Moneda500());
-        monedas.add(new Moneda100());
-
-        monedas.sort(null);
-
-        for (Moneda m : monedas) {
-            if (m == null) {
-                System.out.println("null");
-            } else {
-                System.out.println(m.getValor());
-            }
-        }
     }
 }
