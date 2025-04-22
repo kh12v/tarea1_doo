@@ -9,10 +9,13 @@ class Expendedor {
     private DepositoM monVu;
     private int precio;
 
-    public static final int COCA=1;
-    public static final int SPRITE=2;
+    public static final int COCA     = 1;
+    public static final int SPRITE   = 2;
+    public static final int FANTA    = 3;
+    public static final int SNICKERS = 4;
+    public static final int SUPER8   = 5;
 
-    public Expendedor(int numBebidas, int precioBebidas) {
+    public Expendedor(int numProductos, int precioProductos) {
         coca = new Deposito<Bebida>();
         sprite = new Deposito<Bebida>();
         fanta = new Deposito<Bebida>();
@@ -21,9 +24,9 @@ class Expendedor {
         super8 = new Deposito<Dulce>();
 
         monVu = new DepositoM();
-        precio = precioBebidas;
+        precio = precioProductos;
 
-        for (int i = 0; i < numBebidas; i++) {
+        for (int i = 0; i < numProductos; i++) {
             coca.add(     new CocaCola( (i*5)+0 ));
             sprite.add(   new Sprite( (i*5)+1   ));
             fanta.add(    new Fanta( (i*5)+2    ));
@@ -32,7 +35,7 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+    public Producto comprarProducto(Moneda m, int cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (m == null) {
             throw new PagoIncorrectoException("Debe ingresar una moneda");
         }
@@ -51,6 +54,15 @@ class Expendedor {
                 break;
             case SPRITE:
                 temp = sprite.get();
+                break;
+            case FANTA:
+                temp = fanta.get();
+                break;
+            case SNICKERS:
+                temp = snickers.get();
+                break;
+            case SUPER8:
+                temp = super8.get();
                 break;
             default:
                 throw new NoHayProductoException("No existe producto solicitado");
