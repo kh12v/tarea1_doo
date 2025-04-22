@@ -4,14 +4,18 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Expendedor exp = new Expendedor(2, 100);
+        Expendedor exp = new Expendedor(2, 200);
 
         // Comprar con vuelto
         Comprador c = new Comprador(new Moneda500(), Expendedor.Productos.COCA, exp);
         System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
 
-        // Comprar sin vuelto
+        // Comprar sin dinero suficiente
         c = new Comprador(new Moneda100(), Expendedor.Productos.COCA, exp);
+        System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
+
+        // Comprar con vuelto
+        c = new Comprador(new Moneda1000(), Expendedor.Productos.COCA, exp);
         System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
 
         // Comprar sin bebidas
@@ -22,6 +26,18 @@ public class Main {
         c = new Comprador(null, Expendedor.Productos.SPRITE, exp);
         System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
 
+        // Comprar otra bebida
+        c = new Comprador(new Moneda1000(), Expendedor.Productos.FANTA, exp);
+        System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
+
+        // Comprar dulce
+        c = new Comprador(new Moneda500(), Expendedor.Productos.SNICKERS, exp);
+        System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
+
+        // Comprar otro dulce
+        c = new Comprador(new Moneda1000(), Expendedor.Productos.SUPER8, exp);
+        System.out.println("Bebida: " + c.queConsumiste() + "; Vuelto: " + c.cuantoVuelto());
+
         // Se crea una lista de monedas para luego ser ordenadas de mayor a menor
         // utilizando el método sort
         ArrayList<Moneda> monedas = new ArrayList<Moneda>();
@@ -29,10 +45,8 @@ public class Main {
         // Se crean monedas de manera desordenada
         monedas.add(new Moneda100());
         monedas.add(new Moneda100());
-        monedas.add(new Moneda500());
         monedas.add(new Moneda1000());
         monedas.add(new Moneda500());
-        monedas.add(new Moneda100());
 
         System.out.println("Depósito de monedas desordenado:");
         for (Moneda m : monedas) {
