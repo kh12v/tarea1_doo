@@ -21,12 +21,19 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int cual) throws NoHayProductoException {
+    public Bebida comprarBebida(Moneda m, int cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (m == null) {
-            return null;
+            throw new PagoIncorrectoException("Debe ingresar una moneda");
         }
 
-        if (m.getValor() < precio || (cual != COCA && cual != SPRITE)) {
+        // No alcanza saldo
+        if (m.getValor() < precio) {
+            monVu.add(m);
+            throw new PagoInsuficienteException("Pago insuficiente");
+        }
+
+        // Opción de producto no válido
+        if ((cual != COCA && cual != SPRITE)) {
             monVu.add(m);
             return null;
         }

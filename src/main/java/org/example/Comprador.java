@@ -5,14 +5,16 @@ class Comprador {
     private int vuelto;
 
     public Comprador(Moneda m, int cualBebida, Expendedor exp) {
-        if (m == null) {
-            return;
-        }
-
         Bebida b = null;
         try {
             b = exp.comprarBebida(m, cualBebida);
-        } catch(NoHayProductoException e) {
+        } catch (NoHayProductoException e) {
+            // TODO: Remove log
+            System.out.println("Error: " + e.getMessage());
+        } catch (PagoInsuficienteException e) {
+            // TODO: Remove log
+            System.out.println("Error: " + e.getMessage());
+        } catch (PagoIncorrectoException e) {
             // TODO: Remove log
             System.out.println("Error: " + e.getMessage());
         }
