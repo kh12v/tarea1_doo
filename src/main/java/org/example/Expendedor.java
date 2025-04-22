@@ -9,11 +9,9 @@ class Expendedor {
     private DepositoM monVu;
     private int precio;
 
-    public static final int COCA     = 1;
-    public static final int SPRITE   = 2;
-    public static final int FANTA    = 3;
-    public static final int SNICKERS = 4;
-    public static final int SUPER8   = 5;
+    public enum Productos {
+        COCA, SPRITE, FANTA, SNICKERS, SUPER8;
+    }
 
     public Expendedor(int numProductos, int precioProductos) {
         coca = new Deposito<Bebida>();
@@ -35,7 +33,7 @@ class Expendedor {
         }
     }
 
-    public Producto comprarProducto(Moneda m, int cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+    public Producto comprarProducto(Moneda m, Productos cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (m == null) {
             throw new PagoIncorrectoException("Debe ingresar una moneda");
         }

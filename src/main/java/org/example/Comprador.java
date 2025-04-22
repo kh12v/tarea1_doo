@@ -4,7 +4,7 @@ class Comprador {
     private String sonido = "";
     private int vuelto = 0;
 
-    public Comprador(Moneda m, int cualBebida, Expendedor exp) {
+    public Comprador(Moneda m, Expendedor.Productos cualBebida, Expendedor exp) {
         Producto p = null;
         try {
             p = exp.comprarProducto(m, cualBebida);
