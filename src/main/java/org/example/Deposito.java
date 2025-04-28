@@ -10,7 +10,7 @@ class Deposito<T> {
     }
 
     public T get() {
-        if (arrayList.size() == 0) {
+        if (arrayList.isEmpty()) {
             return null;
         }
 

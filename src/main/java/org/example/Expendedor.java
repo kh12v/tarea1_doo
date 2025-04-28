@@ -6,22 +6,22 @@ class Expendedor {
     private Deposito<Bebida> fanta;
     private Deposito<Dulce> snickers;
     private Deposito<Dulce> super8;
-    private DepositoM monVu;
+    private Deposito<Moneda> monVu;
     private int precio;
 
     public enum Productos {
-        COCA, SPRITE, FANTA, SNICKERS, SUPER8;
+        COCA, SPRITE, FANTA, SNICKERS, SUPER8
     }
 
     public Expendedor(int numProductos, int precioProductos) {
-        coca = new Deposito<Bebida>();
-        sprite = new Deposito<Bebida>();
-        fanta = new Deposito<Bebida>();
+        coca = new Deposito<>();
+        sprite = new Deposito<>();
+        fanta = new Deposito<>();
 
-        snickers = new Deposito<Dulce>();
-        super8 = new Deposito<Dulce>();
+        snickers = new Deposito<>();
+        super8 = new Deposito<>();
 
-        monVu = new DepositoM();
+        monVu = new Deposito<>();
         precio = precioProductos;
 
         for (int i = 0; i < numProductos; i++) {
