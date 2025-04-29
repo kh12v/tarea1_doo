@@ -9,13 +9,10 @@ class Comprador {
         try {
             p = exp.comprarProducto(m, cualProducto);
         } catch (NoHayProductoException e) {
-            // TODO: Remove log
             System.out.println("Error: " + e.getMessage());
         } catch (PagoInsuficienteException e) {
-            // TODO: Remove log
             System.out.println("Error: " + e.getMessage());
         } catch (PagoIncorrectoException e) {
-            // TODO: Remove log
             System.out.println("Error: " + e.getMessage());
             return;
         }

@@ -9,7 +9,7 @@ class Expendedor {
     private Deposito<Moneda> monVu;
 
     public enum Productos {
-        COCA(300), SPRITE(200), FANTA(100), SNICKERS(200), SUPER8(100), NULO(0);
+        COCA(1500), SPRITE(1000), FANTA(1000), SNICKERS(700), SUPER8(500), NULO(0);
 
         public final int precio;
 
