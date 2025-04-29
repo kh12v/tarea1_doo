@@ -4,10 +4,10 @@ class Comprador {
     private String sonido = "";
     private int vuelto = 0;
 
-    public Comprador(Moneda m, Expendedor.Productos cualBebida, Expendedor exp) {
+    public Comprador(Moneda m, Expendedor.Productos cualProducto, Expendedor exp) {
         Producto p = null;
         try {
-            p = exp.comprarProducto(m, cualBebida);
+            p = exp.comprarProducto(m, cualProducto);
         } catch (NoHayProductoException e) {
             // TODO: Remove log
             System.out.println("Error: " + e.getMessage());
