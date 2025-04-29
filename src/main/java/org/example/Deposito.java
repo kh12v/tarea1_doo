@@ -5,10 +5,19 @@ import java.util.ArrayList;
 class Deposito<T> {
     private ArrayList<T> arrayList;
 
+    /**
+     * Se almacenará dentro de un ArrayList elementos de tipo genérico
+     * en un orden FIFO
+     * @see ArrayList
+     */
     public Deposito() {
         arrayList = new ArrayList<>();
     }
 
+    /**
+     * @return El primero valor almacenado en el ArrayList.
+     * Retorna null si el ArrayList está vacío
+     */
     public T get() {
         if (arrayList.isEmpty()) {
             return null;
@@ -19,9 +28,13 @@ class Deposito<T> {
         return temp;
     }
 
-    public void add(T producto) {
-        if (producto == null) return;
+    /**
+     * Guarda el elemento al final del ArrayList
+     * @param elemento: El elemento que se desea almacenar dentro del ArrayList
+     */
+    public void add(T elemento) {
+        if (elemento == null) return;
 
-        arrayList.add(producto);
+        arrayList.add(elemento);
     }
 }
