@@ -10,7 +10,7 @@ class Expendedor {
     private int precio;
 
     public enum Productos {
-        COCA, SPRITE, FANTA, SNICKERS, SUPER8
+        COCA, SPRITE, FANTA, SNICKERS, SUPER8, NULO
     }
 
     public Expendedor(int numProductos, int precioProductos) {
