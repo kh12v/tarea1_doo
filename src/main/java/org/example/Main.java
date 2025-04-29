@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Expendedor exp1 = new Expendedor(2, 1000);
-        Expendedor exp2 = new Expendedor(2, 1000);
+        Expendedor exp1 = new Expendedor(2);
+        Expendedor exp2 = new Expendedor(2);
         Comprador c;
         Moneda m;
 

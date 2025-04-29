@@ -5,12 +5,12 @@ public class MainInteractivo {
     public static void ImprimirOpciones(){
         System.out.println("Elija el producto que desea comprar");
         System.out.println("-----Bebidas:------");
-        System.out.println("Coca Cola: 1");
-        System.out.println("Sprite: 2");
-        System.out.println("Fanta: 3");
+        System.out.println("$" + Expendedor.Productos.COCA.precio + " Coca Cola: 1");
+        System.out.println("$" + Expendedor.Productos.SPRITE.precio + "Sprite: 2");
+        System.out.println("$" + Expendedor.Productos.FANTA.precio + "Fanta: 3");
         System.out.println("-----Dulces:-----");
-        System.out.println("Snickers: 4");
-        System.out.println("Super8: 5");
+        System.out.println("$" + Expendedor.Productos.SNICKERS.precio + "Snickers: 4");
+        System.out.println("$" + Expendedor.Productos.SUPER8.precio + "Super8: 5");
         System.out.print("---->");
     }
     private static Moneda ElegirMoneda(int m){
@@ -30,7 +30,7 @@ public class MainInteractivo {
     }
 
     public static void main(String[] args) {
-        Expendedor exp = new Expendedor(2, 200);
+        Expendedor exp = new Expendedor(2);
         Scanner sc = new Scanner(System.in);
         Comprador c;
         ImprimirOpciones();

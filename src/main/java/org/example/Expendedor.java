@@ -7,13 +7,18 @@ class Expendedor {
     private Deposito<Dulce> snickers;
     private Deposito<Dulce> super8;
     private Deposito<Moneda> monVu;
-    private int precio;
 
     public enum Productos {
-        COCA, SPRITE, FANTA, SNICKERS, SUPER8, NULO
+        COCA(300), SPRITE(200), FANTA(100), SNICKERS(200), SUPER8(100), NULO(0);
+
+        public final int precio;
+
+        Productos(int precio) {
+            this.precio = precio;
+        }
     }
 
-    public Expendedor(int numProductos, int precioProductos) {
+    public Expendedor(int numProductos) {
         coca = new Deposito<>();
         sprite = new Deposito<>();
         fanta = new Deposito<>();
@@ -22,7 +27,6 @@ class Expendedor {
         super8 = new Deposito<>();
 
         monVu = new Deposito<>();
-        precio = precioProductos;
 
         for (int i = 0; i < numProductos; i++) {
             coca.add(     new CocaCola( (i*5)+0 ));
@@ -39,7 +43,7 @@ class Expendedor {
         }
 
         // No alcanza saldo
-        if (m.getValor() < precio) {
+        if (m.getValor() < cual.precio) {
             monVu.add(m);
             throw new PagoInsuficienteException("Pago insuficiente");
         }
@@ -73,7 +77,7 @@ class Expendedor {
             throw new NoHayProductoException("No hay producto solicitado");
         }
 
-        int howManyCoins = (m.getValor() - precio) / 100;
+        int howManyCoins = (m.getValor() - cual.precio) / 100;
         for (int i = 0; i < howManyCoins; i++) {
             monVu.add(new Moneda100());
         }
