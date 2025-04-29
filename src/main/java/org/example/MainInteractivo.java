@@ -11,6 +11,7 @@ public class MainInteractivo {
         System.out.println("-----Dulces:-----");
         System.out.println("Snickers: 4");
         System.out.println("Super8: 5");
+        System.out.print("---->");
     }
     private static Moneda ElegirMoneda(int m){
         switch(m){
@@ -33,40 +34,46 @@ public class MainInteractivo {
         Scanner sc = new Scanner(System.in);
         Comprador c;
         ImprimirOpciones();
-        //System.out.println("Para salir de la maquina escriba 'salir'");
         while(sc.hasNext()) {
             if(sc.hasNextInt()){
                 int seleccion=sc.nextInt();
-                System.out.println("Ingrese su Moneda:                              //(100, 500, 1000, 1500)");
+                System.out.println("Ingrese su Moneda:   //(100, 500, 1000, 1500)");
+                System.out.print("---->");
                 int moneda=sc.nextInt();
                 switch (seleccion){
                     case 1:
                         c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.COCA, exp);
-                        System.out.println("Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
+                        break;
                     case 2:
                         c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.SPRITE, exp);
-                        System.out.println("Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
+                        break;
                     case 3:
                         c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.FANTA, exp);
-                        System.out.println("Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
+                        break;
                     case 4:
                         c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.SNICKERS, exp);
-                        System.out.println("Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
+                        break;
                     case 5:
                         c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.SUPER8, exp);
-                        System.out.println("Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
+                        break;
                     default:
                         c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.NULO, exp);
-                        System.out.println("Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+                        System.out.println("\n** vuelto: "+c.cuantoVuelto()+" **\n");
                 }
             }else{
                 String s= sc.next();
                 if(s.equalsIgnoreCase("salir")){
                     break;
                 }else{
-                    System.out.println("Entrada Invalida, ingrese un valor entero o 'terminar para terminar programa");
+                    System.out.println("Entrada invalida!\n");
                 }
             }
+            System.out.println("///Para salir de la maquina escriba 'salir'\\\\\\\n");
             ImprimirOpciones();
         }
     }

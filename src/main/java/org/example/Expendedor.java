@@ -63,6 +63,7 @@ class Expendedor {
                 temp = super8.get();
                 break;
             default:
+                monVu.add(m);
                 throw new NoHayProductoException("No existe producto solicitado");
         }
 
