@@ -8,6 +8,10 @@ class Expendedor {
     private Deposito<Dulce> super8;
     private Deposito<Moneda> monVu;
 
+    /**
+     * Se utiliza para especificar el tipo de producto que se va a comprar
+     * y se almacena su precio de manera constante
+     */
     public enum Productos {
         COCA(1500), SPRITE(1000), FANTA(1000), SNICKERS(700), SUPER8(500), NULO(0);
 
@@ -18,6 +22,13 @@ class Expendedor {
         }
     }
 
+    /**
+     * El Expendedor almacena los productos que especificados por el enum 'Productos'
+     * Cada producto es almacenado en un depósito específico para dicho producto
+     * @param numProductos: La cantidad que se almacenará en cada depósito para cada tipo de producto
+     * @see Productos
+     * @see Deposito
+     */
     public Expendedor(int numProductos) {
         coca = new Deposito<>();
         sprite = new Deposito<>();
@@ -37,6 +48,25 @@ class Expendedor {
         }
     }
 
+    /**
+     * Retorna el producto solicitado y almacena el vuelto en monedas de 100 en el depósito monVu
+     * siempre y cuando no ocurra algunos de los siguientes casos:
+     * 1. Si la moneda es null arroja PagoIncorrectoException
+     * 2. Si el saldo no es suficiente para comprar el producto devuelve la misma
+     *    entregada y arroja PagoInsuficienteException
+     * 3. Si el producto solicitado es NULO devuelve la misma moneda entregada
+     *    y arroja NoHayProductoException
+     * 4. Si no hay producto solicitado (el depósito está vacio) devuelve la
+     *    misma moneda entregada y arroja NoHayProductoException
+     * @param m: Moneda utilizada para la compra
+     * @param cual: El producto que se desea comprar
+     * @return Producto si es que la compra es exisota en caso contrario retorna null
+     * @throws NoHayProductoException
+     * @throws PagoInsuficienteException
+     * @throws PagoIncorrectoException
+     * @see Moneda
+     * @see Producto
+     */
     public Producto comprarProducto(Moneda m, Productos cual) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (m == null) {
             throw new PagoIncorrectoException("Debe ingresar una moneda");
@@ -85,6 +115,9 @@ class Expendedor {
         return temp;
     }
 
+    /**
+     * @return la última moneda dentro del depósito monVu (puede ser null si noy hay monedas)
+     */
     public Moneda getVuelto() {
         return monVu.get();
     }
