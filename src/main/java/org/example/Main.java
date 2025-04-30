@@ -3,6 +3,10 @@ package org.example;
 import java.util.ArrayList;
 
 public class Main {
+    /**
+     * Main de prueba el cual comprueba el correcto funcionamiento de todas las clases del programa
+     * @param args: Argumentos que recibe el programa al ejecutarse. El programa no requiere argumentos
+     */
     public static void main(String[] args) {
         Expendedor exp1 = new Expendedor(2);
         Expendedor exp2 = new Expendedor(2);

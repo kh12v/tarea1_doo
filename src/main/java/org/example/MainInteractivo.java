@@ -2,6 +2,9 @@ package org.example;
 import java.util.Scanner;
 
 public class MainInteractivo {
+    /**
+     * Imprime en consola el menú con las opciones de compra para el usuario
+     */
     public static void ImprimirOpciones(){
         System.out.println("Elija el producto que desea comprar");
         System.out.println("-----Bebidas:------");
@@ -13,6 +16,13 @@ public class MainInteractivo {
         System.out.println("5. Super8: $" + Expendedor.Productos.SUPER8.precio);
         System.out.print("---->");
     }
+
+    /**
+     * Devuelve la moneda con el valor especificado en el argumento.
+     * Los valores válidos son 100, 500, 1000 y 1500
+     * @param m: Valor de la moneda que se quiere obtener
+     * @return
+     */
     private static Moneda ElegirMoneda(int m){
         switch(m){
             case 100:
@@ -29,6 +39,10 @@ public class MainInteractivo {
         }
     }
 
+    /**
+     * Main interactivo el cual permite al usuario interactuar con un expendedor
+     * @param args: Argumentos que recibe el programa al ejecutarse. El programa no requiere argumentos
+     */
     public static void main(String[] args) {
         Expendedor exp = new Expendedor(2);
         Scanner sc = new Scanner(System.in);
