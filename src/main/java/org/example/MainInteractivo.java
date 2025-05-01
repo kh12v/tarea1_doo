@@ -1,9 +1,11 @@
 package org.example;
 import java.util.Scanner;
-
+/**
+ * Una simulacion simple de interfaz interactiva para una máquina expendedora de dulces y bebidas.
+ */
 public class MainInteractivo {
     /**
-     * Imprime en consola el menú con las opciones de compra para el usuario
+     * Imprime en consola el menú con las opciones de compra para el usuario.
      */
     public static void ImprimirOpciones(){
         System.out.println("Elija el producto que desea comprar");
@@ -21,7 +23,6 @@ public class MainInteractivo {
      * Devuelve la moneda con el valor especificado en el argumento.
      * Los valores válidos son 100, 500, 1000 y 1500
      * @param m: Valor de la moneda que se quiere obtener
-     * @return
      */
     private static Moneda ElegirMoneda(int m){
         switch(m){
@@ -40,7 +41,8 @@ public class MainInteractivo {
     }
 
     /**
-     * Main interactivo el cual permite al usuario interactuar con un expendedor
+     * Main interactivo el cual permite al usuario interactuar con un expendedor,
+     * mediante un bucle que verifica que el usuario haya ingresado un valor para seguir comprando o la palabra clave "salir" para dejar de comprar.
      * @param args: Argumentos que recibe el programa al ejecutarse. El programa no requiere argumentos
      */
     public static void main(String[] args) {
@@ -54,30 +56,12 @@ public class MainInteractivo {
                 System.out.println("Ingrese su Moneda:   //(100, 500, 1000, 1500)");
                 System.out.print("---->");
                 int moneda=sc.nextInt();
-                switch (seleccion){
-                    case 1:
-                        c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.COCA, exp);
-                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
-                        break;
-                    case 2:
-                        c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.SPRITE, exp);
-                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
-                        break;
-                    case 3:
-                        c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.FANTA, exp);
-                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
-                        break;
-                    case 4:
-                        c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.SNICKERS, exp);
-                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
-                        break;
-                    case 5:
-                        c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.SUPER8, exp);
-                        System.out.println("\n** Producto comprado: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+" **\n");
-                        break;
-                    default:
-                        c=new Comprador(ElegirMoneda(moneda), Expendedor.Productos.NULO, exp);
-                        System.out.println("\n** vuelto: "+c.cuantoVuelto()+" **\n");
+                if (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5) {
+                    c = new Comprador(ElegirMoneda(moneda), Expendedor.Productos.values()[seleccion - 1], exp);
+                    System.out.println("\n** Producto comprado: " + c.queConsumiste() + ", vuelto: " + c.cuantoVuelto() + " **\n");
+                } else {
+                    c = new Comprador(ElegirMoneda(moneda), Expendedor.Productos.NULO, exp);
+                    System.out.println("\n** vuelto: " + c.cuantoVuelto() + " **\n");
                 }
             }else{
                 String s= sc.next();
