@@ -107,6 +107,10 @@ class Expendedor {
             throw new NoHayProductoException("No hay producto solicitado");
         }
 
+        if (m.getValor() == cual.precio) {
+            return temp;
+        }
+
         int howManyCoins = (m.getValor() - cual.precio) / 100;
         for (int i = 0; i < howManyCoins; i++) {
             monVu.add(new Moneda100());
