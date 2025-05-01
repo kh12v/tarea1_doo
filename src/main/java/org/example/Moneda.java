@@ -6,8 +6,8 @@ abstract class Moneda implements Comparable<Moneda> {
     /**
      * @return La referencia a al objeto moneda
      */
-    public Moneda getSerie() {
-        return this;
+    public String getSerie() {
+        return Integer.toHexString(System.identityHashCode(this));
     }
 
     /**
@@ -20,7 +20,7 @@ abstract class Moneda implements Comparable<Moneda> {
      */
     @Override
     public String toString() {
-        return "Moneda:\n-Serie: " + getSerie() + "\n-Valor: " + getValor();
+        return "--> Moneda:\n-Serie: " + getSerie() + "\n-Valor: " + getValor();
     }
 
     /**
@@ -30,20 +30,14 @@ abstract class Moneda implements Comparable<Moneda> {
      * -1 si getValor() > c.getValor()
      * 0 si getValor() == c.getValor()
      * @param c Objeto al que será comparado
-     * @return El valor comparativo respecto a el valor monetario
+     * @return El valor comparativo respecto al valor monetario
      */
     @Override
     public int compareTo(Moneda c) {
         int valor = getValor();
         int valor2 = c.getValor();
 
-        if (valor < valor2) {
-            return 1;
-        } else if (valor > valor2) {
-            return -1;
-        } else {
-            return 0;
-        }
+        return Integer.compare(valor2, valor);
     }
 }
 
