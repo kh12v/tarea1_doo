@@ -2,7 +2,7 @@ package org.example;
 
 public class PagoIncorrectoException extends Exception {
     /**
-     * Excepción que surje cuando se utiliza una moneda null para intentar comprar un producto
+     * Excepción que surge cuando se utiliza una moneda null para intentar comprar un producto
      * @param message: Mensaje personalizado para la excepción
      */
     public PagoIncorrectoException(String message) {

@@ -2,7 +2,7 @@ package org.example;
 
 public class PagoInsuficienteException extends Exception {
     /**
-     * Excepción qe surje cuando se intenta comprar un producto con una moneda de valor inferior
+     * Excepción qe surge cuando se intenta comprar un producto con una moneda de valor inferior
      * al precio del producto
      * @param message: Mensaje personalizado para la excepción
      */

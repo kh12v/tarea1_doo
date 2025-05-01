@@ -18,7 +18,7 @@ public abstract class Producto {
     public abstract String consumir();
 
     /**
-     * @return Número único para identificar cad producto
+     * @return Número único para identificar cada producto
      */
     public int getSerie() {
         return serie;

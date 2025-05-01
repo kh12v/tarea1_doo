@@ -2,7 +2,7 @@ package org.example;
 
 class CocaCola extends Bebida {
     /**
-     * @param numSerie: Valor único para identificar cada producto
+     * @param numSerie: Valor único para identificar cada producto.
      * @see Bebida
      */
     public CocaCola(int numSerie) {
@@ -10,10 +10,10 @@ class CocaCola extends Bebida {
     }
 
     /**
-     * El comprador almacena este valor cuando consume el producto
+     * El comprador almacena este valor cuando consume el producto.
      * @return String único que retorna este producto al consumirlo
      */
     public String consumir() {
-        return "cocacola";
+        return "coca cola";
     }
 }

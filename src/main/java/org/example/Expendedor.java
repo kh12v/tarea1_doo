@@ -1,16 +1,16 @@
 package org.example;
 
 class Expendedor {
-    private Deposito<Bebida> coca;
-    private Deposito<Bebida> sprite;
-    private Deposito<Bebida> fanta;
-    private Deposito<Dulce> snickers;
-    private Deposito<Dulce> super8;
-    private Deposito<Moneda> monVu;
+    private final Deposito<Bebida> coca;
+    private final Deposito<Bebida> sprite;
+    private final Deposito<Bebida> fanta;
+    private final Deposito<Dulce> snickers;
+    private final Deposito<Dulce> super8;
+    private final Deposito<Moneda> monVu;
 
     /**
      * Se utiliza para especificar el tipo de producto que se va a comprar
-     * y se almacena su precio de manera constante
+     * y se almacena su precio de manera constante.
      */
     public enum Productos {
         COCA(1500), SPRITE(1000), FANTA(1000), SNICKERS(700), SUPER8(500), NULO(0);
@@ -24,7 +24,7 @@ class Expendedor {
 
     /**
      * El Expendedor almacena los productos que especificados por el enum 'Productos'
-     * Cada producto es almacenado en un depósito específico para dicho producto
+     * Cada producto es almacenado en un depósito específico para dicho producto.
      * @param numProductos: La cantidad que se almacenará en cada depósito para cada tipo de producto
      * @see Productos
      * @see Deposito
@@ -40,7 +40,7 @@ class Expendedor {
         monVu = new Deposito<>();
 
         for (int i = 0; i < numProductos; i++) {
-            coca.add(     new CocaCola( (i*5)+0 ));
+            coca.add(     new CocaCola((i*5)+0  ));
             sprite.add(   new Sprite( (i*5)+1   ));
             fanta.add(    new Fanta( (i*5)+2    ));
             snickers.add( new Snickers( (i*5)+3 ));
@@ -51,16 +51,16 @@ class Expendedor {
     /**
      * Retorna el producto solicitado y almacena el vuelto en monedas de 100 en el depósito monVu
      * siempre y cuando no ocurra algunos de los siguientes casos:
-     * 1. Si la moneda es null arroja PagoIncorrectoException
+     * 1. Si la moneda es null arroja PagoIncorrectoException.
      * 2. Si el saldo no es suficiente para comprar el producto devuelve la misma
-     *    entregada y arroja PagoInsuficienteException
+     *    entregada y arroja PagoInsuficienteException.
      * 3. Si el producto solicitado es NULO devuelve la misma moneda entregada
-     *    y arroja NoHayProductoException
-     * 4. Si no hay producto solicitado (el depósito está vacio) devuelve la
-     *    misma moneda entregada y arroja NoHayProductoException
+     *    y arroja NoHayProductoException.
+     * 4. Si no hay producto solicitado (el depósito está vacío) devuelve la
+     *    misma moneda entregada y arroja NoHayProductoException.
      * @param m: Moneda utilizada para la compra
      * @param cual: El producto que se desea comprar
-     * @return Producto si es que la compra es exisota en caso contrario retorna null
+     * @return Producto si es que la compra es exitosa en caso contrario retorna null
      * @throws NoHayProductoException
      * @throws PagoInsuficienteException
      * @throws PagoIncorrectoException
@@ -78,7 +78,7 @@ class Expendedor {
             throw new PagoInsuficienteException("Pago insuficiente");
         }
 
-        Producto temp = null;
+        Producto temp;
 
         switch (cual) {
             case COCA:
@@ -120,7 +120,7 @@ class Expendedor {
     }
 
     /**
-     * @return la última moneda dentro del depósito monVu (puede ser null si noy hay monedas)
+     * @return la última moneda dentro del depósito monVu (puede ser null si no hay monedas).
      */
     public Moneda getVuelto() {
         return monVu.get();
