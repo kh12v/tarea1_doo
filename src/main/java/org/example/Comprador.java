@@ -22,18 +22,8 @@ class Comprador {
      * @see PagoInsuficienteException
      * @see PagoIncorrectoException
      */
-    public Comprador(Moneda m, Expendedor.Productos cualProducto, Expendedor exp) {
-        Producto p = null;
-        try {
-            p = exp.comprarProducto(m, cualProducto);
-        } catch (NoHayProductoException e) {
-            System.out.println("Error: " + e.getMessage());
-        } catch (PagoInsuficienteException e) {
-            System.out.println("Error: " + e.getMessage());
-        } catch (PagoIncorrectoException e) {
-            System.out.println("Error: " + e.getMessage());
-            return;
-        }
+    public Comprador(Moneda m, Expendedor.Productos cualProducto, Expendedor exp) throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException{
+        Producto p = exp.comprarProducto(m, cualProducto);
 
         if (p == null) {
             Moneda monedaTemporal = exp.getVuelto();

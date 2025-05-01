@@ -57,12 +57,16 @@ public class MainInteractivo {
                 System.out.println("Ingrese su Moneda:   //(100, 500, 1000, 1500)");
                 System.out.print("---->");
                 int moneda=sc.nextInt();
-                if (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5) {
-                    c = new Comprador(ElegirMoneda(moneda), Expendedor.Productos.values()[seleccion - 1], exp);
-                    System.out.println("\n** Producto comprado: " + c.queConsumiste() + ", vuelto: " + c.cuantoVuelto() + " **\n");
-                } else {
-                    c = new Comprador(ElegirMoneda(moneda), Expendedor.Productos.NULO, exp);
-                    System.out.println("\n** vuelto: " + c.cuantoVuelto() + " **\n");
+                try {
+                    if (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5) {
+                        c = new Comprador(ElegirMoneda(moneda), Expendedor.Productos.values()[seleccion - 1], exp);
+                        System.out.println("\n** Producto comprado: " + c.queConsumiste() + ", vuelto: " + c.cuantoVuelto() + " **\n");
+                    } else {
+                        c = new Comprador(ElegirMoneda(moneda), Expendedor.Productos.NULO, exp);
+                        System.out.println("\n** vuelto: " + c.cuantoVuelto() + " **\n");
+                    }
+                } catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException e) {
+                    System.out.println("Error: " + e.getMessage());
                 }
             }else{
                 String s= sc.next();

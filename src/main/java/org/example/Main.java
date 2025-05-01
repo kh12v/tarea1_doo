@@ -203,11 +203,15 @@ public class Main {
      * @param exp: Expendedor que del cual se quiere comprar
      */
     private static void Comprar(Moneda m, Expendedor.Productos cualProducto, Expendedor exp) {
-        Comprador c = new Comprador(m, cualProducto, exp);
-        if(cualProducto==Expendedor.Productos.NULO||m==null){
-            System.out.println(m+"\n--> vuelto: $" + c.cuantoVuelto()+"\n");
-        }else{
-            System.out.println(m+"\n--> Producto comprado: " + c.queConsumiste() + ", vuelto: $" + c.cuantoVuelto()+"\n");
+        try {
+            Comprador c = new Comprador(m, cualProducto, exp);
+            if(cualProducto==Expendedor.Productos.NULO||m==null){
+                System.out.println(m+"\n--> vuelto: $" + c.cuantoVuelto()+"\n");
+            }else{
+                System.out.println(m+"\n--> Producto comprado: " + c.queConsumiste() + ", vuelto: $" + c.cuantoVuelto()+"\n");
+            }
+        } catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
