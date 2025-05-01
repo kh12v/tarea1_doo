@@ -10,217 +10,158 @@ public class Main {
     public static void main(String[] args) {
         Expendedor exp1 = new Expendedor(2);
         Expendedor exp2 = new Expendedor(2);
-        Comprador c;
-        Moneda m;
 
         System.out.println("-----Producto que no vende-----");
-        m = new Moneda1000();
-        c = new Comprador(m,Expendedor.Productos.NULO, exp1);
-        System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto()+"\n");
+        Comprar(new Moneda1000(),Expendedor.Productos.NULO, exp1);
 
         System.out.println("-----Comprar Super8 sin moneda-----");
         for(int i=0;i<2;i++){
-            c = new Comprador(null,Expendedor.Productos.SUPER8, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(null,Expendedor.Productos.SUPER8, exp1);
         }
 
         System.out.println("\n-----Con dinero Justo para el precio Super8-----");
         for(int i=0;i<2;i++){
-            m = new Moneda500();
-            c = new Comprador(m,Expendedor.Productos.SUPER8, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda500(),Expendedor.Productos.SUPER8, exp1);
         }
 
         System.out.println("\n-----Comprar CocaCola sin moneda-----");
         for(int i=0;i<2;i++){
-            c = new Comprador(null,Expendedor.Productos.COCA, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(null,Expendedor.Productos.COCA, exp1);
         }
 
         System.out.println("\n-----Con dinero Justo para el precio CocaCola-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.COCA, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.COCA, exp1);
         }
 
         System.out.println("\n-----Con menos dinero que el precio Sprite-----");
         for(int i=0;i<2;i++){
-            m = new Moneda500();
-            c = new Comprador(m,Expendedor.Productos.SPRITE, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda500(),Expendedor.Productos.SPRITE, exp1);
         }
 
         System.out.println("\n-----Con más dinero que el precio Sprite-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SPRITE, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SPRITE, exp1);
         }
 
         System.out.println("\n-----Comprar Fanta sin moneda-----");
         for(int i=0;i<2;i++){
-            c = new Comprador(null,Expendedor.Productos.FANTA, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(null,Expendedor.Productos.FANTA, exp1);
         }
 
         System.out.println("\n-----Con dinero Justo para el precio Fanta-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1000();
-            c = new Comprador(m,Expendedor.Productos.FANTA, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1000(),Expendedor.Productos.FANTA, exp1);
         }
 
         System.out.println("\n-----Con menos dinero que el precio Snickers-----");
         for(int i=0;i<2;i++){
-            m = new Moneda500();
-            c = new Comprador(m,Expendedor.Productos.SNICKERS, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda500(),Expendedor.Productos.SNICKERS, exp1);
         }
 
         System.out.println("\n-----Con más dinero que el precio Snickers-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SNICKERS, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SNICKERS, exp1);
         }
 
         System.out.println("\n-----Depósito 1 Vacío CocaCola-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.COCA, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.COCA, exp1);
         }
 
         System.out.println("\n-----Depósito 1 Vacío Sprite-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SPRITE, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SPRITE, exp1);
         }
 
         System.out.println("\n-----Depósito 1 Vacío Fanta-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.FANTA, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.FANTA, exp1);
         }
 
         System.out.println("\n-----Depósito 1 Vacío Snickers-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SNICKERS, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SNICKERS, exp1);
         }
 
         System.out.println("\n-----Depósito 1 Vacío Super8-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SUPER8, exp1);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SUPER8, exp1);
         }
 
         System.out.println("\n-----Comprar Sprite sin moneda-----");
         for(int i=0;i<2;i++){
-            c = new Comprador(null,Expendedor.Productos.SPRITE, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(null,Expendedor.Productos.SPRITE, exp2);
         }
 
         System.out.println("\n-----Con dinero Justo para el precio Sprite-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1000();
-            c = new Comprador(m,Expendedor.Productos.SPRITE, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1000(),Expendedor.Productos.SPRITE, exp2);
         }
 
         System.out.println("\n-----Con menos dinero que el precio CocaCola-----");
         for(int i=0;i<2;i++){
-            m = new Moneda500();
-            c = new Comprador(m,Expendedor.Productos.COCA, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda500(),Expendedor.Productos.COCA, exp2);
         }
 
         System.out.println("\n-----Con dinero justo para el precio CocaCola-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.COCA, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.COCA, exp2);
         }
 
         System.out.println("\n-----Comprar Snickers sin moneda-----");
         for(int i=0;i<2;i++){
-            c = new Comprador(null,Expendedor.Productos.SNICKERS, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(null,Expendedor.Productos.SNICKERS, exp2);
         }
 
         System.out.println("\n-----Con más dinero que el precio Snickers-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1000();
-            c = new Comprador(m,Expendedor.Productos.SNICKERS, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1000(),Expendedor.Productos.SNICKERS, exp2);
         }
 
         System.out.println("\n-----Con menos dinero que el precio Fanta-----");
         for(int i=0;i<2;i++){
-            m = new Moneda500();
-            c = new Comprador(m,Expendedor.Productos.FANTA, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda500(),Expendedor.Productos.FANTA, exp2);
         }
 
         System.out.println("\n-----Con más dinero que el precio Fanta-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.FANTA, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.FANTA, exp2);
         }
 
         System.out.println("\n-----Con menos dinero que el precio Super8-----");
         for(int i=0;i<2;i++){
-            m = new Moneda100();
-            c = new Comprador(m,Expendedor.Productos.SUPER8, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda100(),Expendedor.Productos.SUPER8, exp2);
         }
 
         System.out.println("\n-----Con más dinero que el precio Super8-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SUPER8, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SUPER8, exp2);
         }
 
         System.out.println("\n-----Depósito 2 Vacío CocaCola-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.COCA, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.COCA, exp2);
         }
 
         System.out.println("\n-----Depósito 2 Vacío Sprite-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SPRITE, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SPRITE, exp2);
         }
 
         System.out.println("\n-----Depósito 2 Vacío Fanta-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.FANTA, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.FANTA, exp2);
         }
 
         System.out.println("\n-----Depósito 2 Vacío Snickers-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SNICKERS, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SNICKERS, exp2);
         }
 
         System.out.println("\n-----Depósito 2 Vacío Super8-----");
         for(int i=0;i<2;i++){
-            m = new Moneda1500();
-            c = new Comprador(m,Expendedor.Productos.SUPER8, exp2);
-            System.out.println("Bebida comprada: "+c.queConsumiste()+", "+"vuelto: "+c.cuantoVuelto());
+            Comprar(new Moneda1500(),Expendedor.Productos.SUPER8, exp2);
         }
 
         // Se crea una lista de monedas para luego ser ordenadas de mayor a menor
@@ -253,5 +194,16 @@ public class Main {
                 System.out.println(moneda.getValor());
             }
         }
+    }
+    /**
+     * Realiza la acción de comprar el producto con la moneda en el expendedor
+     * e imprime en consola la información asociada
+     * @param m: Valor de la moneda ingresada
+     * @param cualProducto: Producto seleccionado
+     * @param exp: Expendedor que del cual se quiere comprar
+     */
+    private static void Comprar(Moneda m, Expendedor.Productos cualProducto, Expendedor exp) {
+        Comprador c = new Comprador(m, cualProducto, exp);
+        System.out.println("Producto comprado: " + c.queConsumiste() + ", vuelto: $" + c.cuantoVuelto());
     }
 }

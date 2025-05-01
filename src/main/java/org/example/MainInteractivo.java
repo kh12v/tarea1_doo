@@ -1,13 +1,13 @@
 package org.example;
 import java.util.Scanner;
 /**
- * Una simulacion simple de interfaz interactiva para una máquina expendedora de dulces y bebidas.
+ * Una simulación simple de interfaz interactiva para una máquina expendedora de dulces y bebidas.
  */
 public class MainInteractivo {
     /**
      * Imprime en consola el menú con las opciones de compra para el usuario.
      */
-    public static void ImprimirOpciones(){
+    private static void ImprimirOpciones(){
         System.out.println("Elija el producto que desea comprar");
         System.out.println("-----Bebidas:------");
         System.out.println("1. Coca Cola: $" + Expendedor.Productos.COCA.precio);
@@ -22,6 +22,7 @@ public class MainInteractivo {
     /**
      * Devuelve la moneda con el valor especificado en el argumento.
      * Los valores válidos son 100, 500, 1000 y 1500
+     * @return una instancia de la moneda ingresada
      * @param m: Valor de la moneda que se quiere obtener
      */
     private static Moneda ElegirMoneda(int m){
