@@ -1,5 +1,9 @@
 package org.example;
-
+/**
+ * Representa virtualmente a una persona que compra un producto desde una máquina expendedora ingresando monedas,
+ * seleccionando algún producto y posteriormente recibiéndolo en conjunto a su respectivo vuelto
+ * desde los depósitos internos de tal expendedor.
+ */
 class Comprador {
     private String sonido = "";
     private int vuelto = 0;

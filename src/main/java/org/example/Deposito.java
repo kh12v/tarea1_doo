@@ -1,7 +1,11 @@
 package org.example;
 
 import java.util.ArrayList;
-
+/**
+ * Representa un depósito que dentro del código lo usamos para representar los distintos lugares dentro
+ * una máquina expendedora donde se almacenan sus productos y monedas.
+ * @param <T>: Deposito de tipo "genérico"
+ */
 class Deposito<T> {
     private final ArrayList<T> arrayList;
 

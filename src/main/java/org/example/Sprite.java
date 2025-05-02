@@ -1,5 +1,7 @@
 package org.example;
-
+/**
+ * Instancia de Bebida que representa una Sprite, puede ser comprada, almacenada y consumida.
+ */
 class Sprite extends Bebida {
     /**
      * @param numSerie: Valor único para identificar cada producto

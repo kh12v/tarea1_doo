@@ -1,8 +1,10 @@
 package org.example;
-
+/**
+ * Un Molde de bebida genérica que se almacena en un depósito y es comprada por un comprador.
+ */
 abstract class Bebida extends Producto {
     /**
-     * Clase abstracta utilizada para diferenciar entre Bebidas y Dulces (ambas heredan de Producto).
+     * Método utilizado para diferenciar distintas Bebidas.
      * @param numSerie: Valor único para identificar cada producto
      * @see Producto
      * @see Dulce

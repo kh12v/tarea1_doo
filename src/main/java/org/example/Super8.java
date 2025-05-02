@@ -1,5 +1,7 @@
 package org.example;
-
+/**
+ * Instancia de Dulce que representa un Super8, puede ser comprado, almacenado y consumido.
+ */
 public class Super8 extends Dulce {
     /**
      * @param numSerie: Valor único para identificar cada producto

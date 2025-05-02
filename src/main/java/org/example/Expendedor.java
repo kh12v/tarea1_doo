@@ -1,5 +1,11 @@
 package org.example;
-
+/**
+ * Es una representation virtual del mecanismo expendedor dentro de una máquina expendedora de golosinas
+ * que se encarga de dispensar el producto seleccionado por el comprador, asignarle precios a los productos y
+ * calcular el vuelto correspondiente para devolverlo.
+ * También es el que maneja principalmente los casos donde el comprador no selecciono bien el producto (o está agotado),
+ * no le alcanza para comprar o no ingreso bien su moneda.
+ */
 class Expendedor {
     private final Deposito<Bebida> coca;
     private final Deposito<Bebida> sprite;

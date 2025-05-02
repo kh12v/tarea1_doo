@@ -1,5 +1,7 @@
 package org.example;
-
+/**
+ * Instancia de Dulce que representa un Snickers, puede ser comprado, almacenado y consumido.
+ */
 public class Snickers extends Dulce {
     /**
      * @param numSerie: Valor único para identificar cada producto

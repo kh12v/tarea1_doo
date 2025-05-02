@@ -1,10 +1,13 @@
 package org.example;
 
 import java.util.ArrayList;
-
+/**
+ * Clase principal que se encarga de probar el correcto funcionamiento de las posibles interacciones
+ * entre el comprador, expendedor, depósito, los productos y las monedas.
+ */
 public class Main {
     /**
-     * Main de prueba el cual comprueba el correcto funcionamiento de todas las clases del programa
+     * Método principal de pruebas el cual comprueba el correcto funcionamiento de todas las clases del programa
      * @param args: Argumentos que recibe el programa al ejecutarse. El programa no requiere argumentos
      */
     public static void main(String[] args) {

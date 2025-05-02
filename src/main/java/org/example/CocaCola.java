@@ -1,5 +1,7 @@
 package org.example;
-
+/**
+ * Instancia de Bebida que representa una Coca Cola, puede ser comprada, almacenada y consumida.
+ */
 class CocaCola extends Bebida {
     /**
      * @param numSerie: Valor único para identificar cada producto.

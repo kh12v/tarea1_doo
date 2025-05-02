@@ -1,7 +1,9 @@
 package org.example;
-
+/**
+ * Un Molde de producto genérico que se almacena en un depósito y es comprado por un comprador.
+ */
 public abstract class Producto {
-    private int serie;
+    private final int serie;
 
     /**
      * @param numSerie: Valor único para identificar cada producto
